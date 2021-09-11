@@ -57,15 +57,18 @@ export default class AboutPage extends Vue {}
   }
   .movement {
     display: grid;
-    
+
     gap: 2rem;
     flex-wrap: wrap;
     grid-template-columns: 1fr;
-    @media only screen and (min-width:768px) {
-grid-template-columns: 40% 1fr;
+    .left {
+      justify-self: center;
     }
-    @media only screen and (min-width:1024px) {
-grid-template-columns: 1fr 1fr;
+    @media only screen and (min-width: 768px) {
+      grid-template-columns: 40% 1fr;
+    }
+    @media only screen and (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr;
     }
 
     .heading {
@@ -90,7 +93,7 @@ grid-template-columns: 1fr 1fr;
       margin-bottom: 24px;
     }
     p {
-        margin-bottom: 1rem;
+      margin-bottom: 1rem;
     }
   }
 }
