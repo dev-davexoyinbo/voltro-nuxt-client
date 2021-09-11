@@ -8,9 +8,7 @@
           <p class="long-text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis
             molestie enim tincidunt duis. Amet, eget lacus, feugiat ut morbi
-            pellentesque amet natoque feugiat. Ac faucibus sed sit consequat
-            tincidunt. Erat proin molestie suspendisse pellentesque varius
-            hendrerit semper odio elementum. Blandit convallis
+            pellentesque amet natoque feugiat.
           </p>
           <div class="button-container">
             <button class="btn btn-primary">Get Started</button>
