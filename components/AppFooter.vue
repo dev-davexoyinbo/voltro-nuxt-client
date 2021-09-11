@@ -33,7 +33,7 @@
 @import "~assets/styles/variables";
 @import "~assets/styles/topography";
 #app-footer {
-    
+    background: white;
     & >* {
         padding: 24px var(--body-padding-x);
         

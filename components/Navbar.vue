@@ -13,7 +13,7 @@
       <div class="close-nav paragraph-large" @click="open = false">
         <i class="fas fa-times"></i>
       </div>
-      <a href="#" class="nav-item">Home</a>
+      <a href="/" class="nav-item" @click="gotoPage(`/`)">Home</a>
       <a href="#" class="nav-item">Pricing</a>
       <a href="#app-footer" class="nav-item">Contact</a>
       <a href="/about" class="nav-item" @click="gotoPage(`/about`)">About</a>
