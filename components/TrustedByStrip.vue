@@ -31,10 +31,11 @@ export default {};
   .trusted-images {
     display: flex;
     gap: 2rem;
+    flex-wrap: wrap;
   }
 
   .img-wrapper {
-    height: 100px;
+    height: 80px;
     img {
       height: 100%;
       width: auto;
