@@ -57,9 +57,16 @@ export default class AboutPage extends Vue {}
   }
   .movement {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    
     gap: 2rem;
     flex-wrap: wrap;
+    grid-template-columns: 1fr;
+    @media only screen and (min-width:768px) {
+grid-template-columns: 40% 1fr;
+    }
+    @media only screen and (min-width:1024px) {
+grid-template-columns: 1fr 1fr;
+    }
 
     .heading {
       margin-bottom: 1.5rem;
