@@ -16,19 +16,23 @@
       <a href="#" class="nav-item">Home</a>
       <a href="#" class="nav-item">Pricing</a>
       <a href="#app-footer" class="nav-item">Contact</a>
-      <a href="#" class="nav-item">About</a>
+      <a href="/about" class="nav-item" @click="gotoPage(`/about`)">About</a>
       <a href="#" class="nav-button rounded shadow-soft">Sign up</a>
     </div>
   </nav>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      open: false,
-    };
-  },
+<script lang="ts">
+import {Vue, Component} from "nuxt-property-decorator";
+
+@Component({})
+export default class Navbar extends Vue {
+  open: boolean = false;
+
+  gotoPage (path: string) {
+    event?.preventDefault()
+    this.$nuxt.$router.push(path)
+  }
 };
 </script>
 

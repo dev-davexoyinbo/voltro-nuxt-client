@@ -57,17 +57,7 @@ export default {};
     z-index: 0;
   }
 
-  @keyframes up-and-down {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-3%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
+  
 
   .img-wrapper-1 {
     animation-name: up-and-down;
