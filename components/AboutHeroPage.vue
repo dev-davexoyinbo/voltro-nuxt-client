@@ -1,6 +1,6 @@
 <template>
   <section id="about-hero">
-    <h1 class="heading heading-1">
+    <h1 class="heading">
       Ensuring the Security and <br />
       Accessibility of Cards.
     </h1>
@@ -15,6 +15,7 @@ export default {};
 
 <style lang="scss">
 @import "~assets/styles/variables";
+@import "~assets/styles/topography";
 
 #about-hero {
   min-height: calc(100vh - #{$navbar-height});
@@ -41,6 +42,15 @@ export default {};
 
   .heading {
       transform: translateY(calc(-1 * #{$navbar-height}));
+      
+      @include heading-3;
+      padding: 24px var(--body-padding-x);
+      @media only screen and (min-width: 768px) {
+          @include heading-2;
+      }
+      @media only screen and (min-width: 1024px) {
+          @include heading-1;
+      }
       text-align: center;
   }
 }
