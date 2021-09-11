@@ -78,17 +78,21 @@
         </div>
       </div>
     </section>
+
+    <trusted-by-strip />
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "nuxt-property-decorator";
 import HeroPage from "~/components/HeroPage.vue";
+import TrustedByStrip from "~/components/TrustedByStrip.vue";
 
 @Component({
   layout: "default",
   components: {
     HeroPage,
+    TrustedByStrip,
   },
 })
 export default class HomePage extends Vue {}
