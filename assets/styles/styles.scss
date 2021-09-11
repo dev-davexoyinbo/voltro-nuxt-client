@@ -4,7 +4,11 @@
 @import "shadows";
 @import "topography";
 @import "variables";
+@import "borders";
 
+:root {
+    --body-padding-x: 32px;
+}
 * {
     padding: 0;
     margin: 0;
