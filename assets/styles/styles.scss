@@ -21,3 +21,8 @@ html {
     font-style: normal;
     @include paragraph-regular;
 }
+
+body {
+    background: $background-color;
+
+}

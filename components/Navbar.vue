@@ -28,6 +28,9 @@ export default {
 @import "~assets/styles/shadows";
 
 #navbar {
+    position: sticky;
+    top: -1px;
+    z-index: 10;
     background: $primary-color;
     height: $navbar-height;
     padding: 0 var(--body-padding-x);
@@ -35,6 +38,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 
     .brand {
         display: flex;
