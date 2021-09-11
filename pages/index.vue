@@ -1,14 +1,84 @@
 <template>
-<div>
-  <hero-page />
-  <p>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quidem in aperiam, rerum qui officiis esse! Vitae eaque architecto cumque fugiat, alias quae labore libero porro esse exercitationem voluptatem, dolorum veritatis facere reprehenderit recusandae voluptates beatae dolore ad, corporis fuga adipisci. Voluptates, temporibus optio! Quaerat odit deserunt numquam, magni nisi corporis nesciunt illo cupiditate vitae! Assumenda omnis veniam a quam, unde voluptas obcaecati nesciunt consequatur ullam facilis aspernatur, officia repudiandae, officiis illo! Autem eius pariatur, beatae exercitationem temporibus quam saepe omnis animi porro provident nam harum amet ipsa aliquam quidem eligendi in! Dolor ex nulla quos, doloremque quia blanditiis dolorem!
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quidem in aperiam, rerum qui officiis esse! Vitae eaque architecto cumque fugiat, alias quae labore libero porro esse exercitationem voluptatem, dolorum veritatis facere reprehenderit recusandae voluptates beatae dolore ad, corporis fuga adipisci. Voluptates, temporibus optio! Quaerat odit deserunt numquam, magni nisi corporis nesciunt illo cupiditate vitae! Assumenda omnis veniam a quam, unde voluptas obcaecati nesciunt consequatur ullam facilis aspernatur, officia repudiandae, officiis illo! Autem eius pariatur, beatae exercitationem temporibus quam saepe omnis animi porro provident nam harum amet ipsa aliquam quidem eligendi in! Dolor ex nulla quos, doloremque quia blanditiis dolorem!
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quidem in aperiam, rerum qui officiis esse! Vitae eaque architecto cumque fugiat, alias quae labore libero porro esse exercitationem voluptatem, dolorum veritatis facere reprehenderit recusandae voluptates beatae dolore ad, corporis fuga adipisci. Voluptates, temporibus optio! Quaerat odit deserunt numquam, magni nisi corporis nesciunt illo cupiditate vitae! Assumenda omnis veniam a quam, unde voluptas obcaecati nesciunt consequatur ullam facilis aspernatur, officia repudiandae, officiis illo! Autem eius pariatur, beatae exercitationem temporibus quam saepe omnis animi porro provident nam harum amet ipsa aliquam quidem eligendi in! Dolor ex nulla quos, doloremque quia blanditiis dolorem!
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quidem in aperiam, rerum qui officiis esse! Vitae eaque architecto cumque fugiat, alias quae labore libero porro esse exercitationem voluptatem, dolorum veritatis facere reprehenderit recusandae voluptates beatae dolore ad, corporis fuga adipisci. Voluptates, temporibus optio! Quaerat odit deserunt numquam, magni nisi corporis nesciunt illo cupiditate vitae! Assumenda omnis veniam a quam, unde voluptas obcaecati nesciunt consequatur ullam facilis aspernatur, officia repudiandae, officiis illo! Autem eius pariatur, beatae exercitationem temporibus quam saepe omnis animi porro provident nam harum amet ipsa aliquam quidem eligendi in! Dolor ex nulla quos, doloremque quia blanditiis dolorem!
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quidem in aperiam, rerum qui officiis esse! Vitae eaque architecto cumque fugiat, alias quae labore libero porro esse exercitationem voluptatem, dolorum veritatis facere reprehenderit recusandae voluptates beatae dolore ad, corporis fuga adipisci. Voluptates, temporibus optio! Quaerat odit deserunt numquam, magni nisi corporis nesciunt illo cupiditate vitae! Assumenda omnis veniam a quam, unde voluptas obcaecati nesciunt consequatur ullam facilis aspernatur, officia repudiandae, officiis illo! Autem eius pariatur, beatae exercitationem temporibus quam saepe omnis animi porro provident nam harum amet ipsa aliquam quidem eligendi in! Dolor ex nulla quos, doloremque quia blanditiis dolorem!
-  </p>
-</div>
+  <div>
+    <hero-page />
+    <section class="showcase home-1">
+      <div class="left">
+        <div class="content">
+          <h3 class="heading">Security Guaranteed</h3>
+          <p class="long-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lobortis
+            molestie enim tincidunt duis. Amet, eget lacus, feugiat ut morbi
+            pellentesque amet natoque feugiat. Ac faucibus sed sit consequat
+            tincidunt. Erat proin molestie suspendisse pellentesque varius
+            hendrerit semper odio elementum. Blandit convallis
+          </p>
+          <div class="button-container">
+            <button class="btn btn-primary">Get Started</button>
+            <button class="btn btn-secondary">Learn more about us</button>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="image-section">
+          <div class="img-wrapper">
+            <img src="/images/undraw_security_o890 1.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="showcase home-2">
+      <div class="left">
+        <div class="content">
+          <h3 class="heading">Use anywhere, and on every Device.</h3>
+          <div class="long-text">
+            <p>Available on Android, iOS, Windows,Linux and Chrome book.</p>
+            <div class="custom-list">
+              <div class="item">
+                <div class="icon-container">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="text">Android</div>
+              </div>
+              <div class="item">
+                <div class="icon-container">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="text">iOS</div>
+              </div>
+              <div class="item">
+                <div class="icon-container">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="text">Windows</div>
+              </div>
+              <div class="item">
+                <div class="icon-container">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="text">Linux</div>
+              </div>
+              <div class="item">
+                <div class="icon-container">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="text">Chrome Book</div>
+              </div>
+            </div>
+          </div>
+          <div class="button-container">
+            <button class="btn btn-secondary">Download here</button>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="image-section">
+          <div class="img-wrapper">
+            <img src="/images/undraw_unlock_24mb 1.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script lang="ts">
@@ -19,7 +89,111 @@ import HeroPage from "~/components/HeroPage.vue";
   layout: "default",
   components: {
     HeroPage,
-  }
+  },
 })
 export default class HomePage extends Vue {}
 </script>
+
+<style lang="scss">
+@import "~assets/styles/variables";
+@import "~assets/styles/topography";
+section.showcase {
+  min-height: calc(100vh - #{$navbar-height});
+  padding: 24px var(--body-padding-x);
+  display: grid;
+  align-items: center;
+  gap: 1rem;
+  max-width: 100%;
+  overflow: hidden;
+  // grid-template-columns: 1fr 1fr;
+  margin: 32px 0;
+
+  @media only screen and (min-width: 768px) {
+    margin: unset;
+    grid-template-columns: 60% 1fr;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    grid-template-columns: 40% 1fr;
+  }
+
+  &.home-1 {
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      #ffffff 100%
+    );
+  }
+
+  .left {
+    order: 2;
+    @media only screen and (min-width: 768px) {
+      order: 1;
+    }
+  }
+
+  .right {
+    justify-self: center;
+    order: 1;
+    @media only screen and (min-width: 768px) {
+      order: 2;
+    }
+  }
+
+  .image-section {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .img-wrapper img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .heading {
+    @include heading-5;
+    margin-bottom: 16px;
+    @media only screen and (min-width: 768px) {
+      margin-bottom: 20px;
+      @include heading-4;
+    }
+    @media only screen and (min-width: 1024px) {
+      @include heading-3;
+    }
+  }
+
+  .long-text {
+    @include paragraph-regular;
+    margin-bottom: 32px;
+
+    @media only screen and (min-width: 1024px) {
+      margin-bottom: 44px;
+      @include paragraph-large;
+    }
+
+    .custom-list {
+      @include paragraph-small;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 24px;
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        
+
+        .icon-container {
+          color: $accent-color;
+        }
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    gap: 1rem;
+  }
+}
+</style>

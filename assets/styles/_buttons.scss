@@ -1,0 +1,24 @@
+@import "variables";
+@import "shadows";
+@import "topography";
+.btn{
+    @include paragraph-regular;
+
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: $shadow-soft;
+    color: $text-color;
+    background: $background-color;
+    cursor: pointer;
+
+    &.btn-primary {
+        color: white;
+        background-color: $primary-color;
+    }
+
+    &.btn-secondary {
+        color: white;
+        background-color: $secondary-color;
+    }
+}

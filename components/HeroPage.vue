@@ -32,9 +32,10 @@ export default {};
 #hero {
   height: calc(100vh - #{$navbar-height});
   position: relative;
-  padding: 0 calc(var(--body-padding-x) + 24px);
+  padding: 0 calc(var(--body-padding-x));
   display: flex;
   align-items: center;
+  overflow: hidden;
 
   &::before {
     content: "";
@@ -53,7 +54,7 @@ export default {};
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: -1;
+    z-index: 0;
   }
 
   @keyframes up-and-down {

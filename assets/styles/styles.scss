@@ -1,13 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500;700&display=swap");
 
 @import "colors";
 @import "shadows";
 @import "topography";
 @import "variables";
 @import "borders";
+@import "buttons";
 
 :root {
-    --body-padding-x: 32px;
+    --body-padding-x: 16px;
+    @media only screen and (min-width: 768px) {
+        --body-padding-x: 48px;
+    }
+    @media only screen and (min-width: 1024px) {
+        --body-padding-x: 52px;
+    }
 }
 * {
     padding: 0;
@@ -17,12 +24,13 @@
 
 html {
     font-size: 16px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: "DM Sans", sans-serif;
     font-style: normal;
     @include paragraph-regular;
+    color: $text-color;
+    background: $background-color;
 }
 
 body {
     background: $background-color;
-
 }
