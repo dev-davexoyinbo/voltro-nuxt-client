@@ -15,7 +15,7 @@
       </div>
       <a href="#" class="nav-item">Home</a>
       <a href="#" class="nav-item">Pricing</a>
-      <a href="#" class="nav-item">Contact</a>
+      <a href="#app-footer" class="nav-item">Contact</a>
       <a href="#" class="nav-item">About</a>
       <a href="#" class="nav-button rounded shadow-soft">Sign up</a>
     </div>

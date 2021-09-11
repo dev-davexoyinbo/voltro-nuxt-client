@@ -29,8 +29,10 @@ html {
     @include paragraph-regular;
     color: $text-color;
     background: $background-color;
+    scroll-behavior: smooth;
 }
 
 body {
     background: $background-color;
+    
 }
