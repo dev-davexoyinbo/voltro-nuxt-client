@@ -1,0 +1,10 @@
+$shadow-hard: 0px 2px 2px rgba(13, 13, 13, 0.18);
+$shadow-soft: 0px 4px 11px rgba(13, 13, 13, 0.18);
+
+.shadow-hard {
+    box-shadow: $shadow-hard;
+}
+
+.shadow-soft {
+    box-shadow: $shadow-soft;
+}
