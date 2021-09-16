@@ -14,7 +14,7 @@
         <i class="fas fa-times"></i>
       </div>
       <a href="/" class="nav-item" @click="gotoPage(`/`)">Home</a>
-      <a href="#" class="nav-item">Pricing</a>
+      <!-- <a href="#" class="nav-item">Pricing</a> -->
       <a href="#app-footer" class="nav-item">Contact</a>
       <a href="/about" class="nav-item" @click="gotoPage(`/about`)">About</a>
       <a href="/auth/register" @click="gotoPage(`/auth/register`)" class="nav-button rounded shadow-soft">Sign up</a>
