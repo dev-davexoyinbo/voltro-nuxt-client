@@ -41,6 +41,7 @@ import Card from "~/components/cards/Card.vue";
 @Component({
   components: { AddCardFab, Card },
   layout: "authenticated",
+  middleware: ["auth"],
 })
 export default class AddCardPage extends Vue {}
 </script>

@@ -3,6 +3,9 @@ export default {
   server: {
     host: "0.0.0.0"
   },
+  env: {
+    API_URL: process.env.API_URL || "http://localhost:8000/api",
+  },
   head: {
     title: 'voltro',
     htmlAttrs: {
@@ -44,12 +47,43 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseUrl: process.env.API_URL || "http://localhost:8000/api",
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  auth: {
+    redirect: {
+      login: '/auth/login',
+      logout: '/',
+      // callback: '/login',
+      home: '/home'
+    },
+    strategies: {
+      local: {
+        token: {
+          property: 'token',
+          global: true,
+          // required: true,
+          // type: 'Bearer'
+        },
+        user: {
+          property: 'user',
+          // autoFetch: true
+        },
+        endpoints: {
+          login: { url: '/auth/login', method: 'post' },
+          logout: { url: '/auth/logout', method: 'post' },
+          user: { url: '/auth/me', method: 'get' }
+        }
+      }
+    }
   }
 }

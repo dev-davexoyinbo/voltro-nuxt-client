@@ -43,6 +43,8 @@ import { Vue, Component } from "nuxt-property-decorator";
 
 @Component({
   layout: "default",
+   middleware: ["auth"],
+  auth: "guest",
 })
 export default class RegisterPage extends Vue {}
 </script>
