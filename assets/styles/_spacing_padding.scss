@@ -1,7 +1,7 @@
 $baseMarginPadding: 2px;
 $marginPaddingTypes: ("top": "t", "bottom": "b", "left" : "l", "right": "r");
 
-@for $i from 1 through 50 {
+@for $i from -50 through 50 {
     .gap-#{$i} {
         gap: calc(#{$baseMarginPadding} * #{$i});
     }
