@@ -27,3 +27,9 @@ import Card from "~/components/cards/Card.vue";
 export default class HomePage extends Vue {}
 </script>
 
+<style scoped>
+.card-wrapper {
+  max-width: 100%;
+}
+</style>
+

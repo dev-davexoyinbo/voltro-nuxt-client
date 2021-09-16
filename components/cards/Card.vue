@@ -41,7 +41,7 @@ export default class Card extends Vue {}
 @import "~/assets/styles/variables";
 .card {
   position: relative;
-  min-width: 400px;
+  width: 400px;
   max-width: 100%;
 
   background: linear-gradient(

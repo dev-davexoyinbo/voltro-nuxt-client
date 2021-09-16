@@ -39,8 +39,3 @@ export default class LoginPage extends Vue {
   }
 }
 </script>
-
-<style lang="scss">
-@import "~assets/styles/forms/authentication_forms";
-
-</style>

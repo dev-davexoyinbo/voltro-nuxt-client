@@ -4,12 +4,28 @@
     <div class="content p-8">
       <h6 class="paragraph-regular text-bf">Navigation</h6>
       <nav class="paragraph-regular d-flex flex-column mt-10 gap-4">
-        <a href="/home" class="active nav-item"
+        <a
+          href="/home"
+          @click.prevent="$nuxt.$router.push(`/home`)"
+          class="nav-item"
+          :class="{
+            active: $nuxt.$route.path == `/home`
+          }"
           ><i class="fas fa-home mr-3"></i>All Cards</a
         >
-        <a href="/home" class="nav-item"><i class="fas fa-credit-card mr-3"></i>Add Card</a>
+        <a
+          href="/add-card"
+          @click.prevent="$nuxt.$router.push(`/add-card`)"
+          class="nav-item"
+          :class="{
+            active: $nuxt.$route.path == `/add-card`
+          }"
+          ><i class="fas fa-credit-card mr-3"></i>Add Card</a
+        >
         <div class="hr"></div>
-        <a href="/home" class="nav-item logout"><i class="fas fa-sign-out-alt mr3"></i>Logout</a>
+        <a href="/home" class="nav-item logout"
+          ><i class="fas fa-sign-out-alt mr3"></i>Logout</a
+        >
       </nav>
     </div>
   </nav>
@@ -30,6 +46,7 @@ export default {};
   box-shadow: $shadow-soft;
   border-radius: 10px;
   overflow: hidden;
+  height: 100%;
   a {
     color: currentColor;
     text-decoration: none;
@@ -44,19 +61,19 @@ export default {};
     overflow: hidden;
   }
   .nav-item {
-      color: $text-color-2;
+    color: $text-color-2;
 
-      &.active {
-        color: $primary-color;
-      }
-      &.logout {
-          color: $secondary-color;
-      }
-      &:hover {
-        // color: color.scale($primary-color, $blackness: 15%);
-        color: darken($primary-color, 10%);
-        color: $primary-color-2;
-      }
+    &.active {
+      color: $primary-color;
+    }
+    &.logout {
+      color: $secondary-color;
+    }
+    &:hover {
+      // color: color.scale($primary-color, $blackness: 15%);
+      color: darken($primary-color, 10%);
+      color: $primary-color-2;
+    }
   }
 }
 </style>

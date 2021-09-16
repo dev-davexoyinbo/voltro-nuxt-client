@@ -46,8 +46,3 @@ import { Vue, Component } from "nuxt-property-decorator";
 })
 export default class RegisterPage extends Vue {}
 </script>
-
-<style lang="scss">
-@import "~assets/styles/forms/authentication_forms";
-
-</style>
