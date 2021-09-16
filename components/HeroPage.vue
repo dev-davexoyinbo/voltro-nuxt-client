@@ -6,8 +6,8 @@
         If security if of high priority, you’re in the right place.
       </p>
       <div class="btn-container">
-        <button class="btn btn-gs shadow-soft">Get Started</button>
-        <button class="btn btn-p shadow-soft">Products</button>
+        <button class="btn btn-gs shadow-soft" @click="gotoPage(`/auth/register`)">Get Started</button>
+        <button class="btn btn-p shadow-soft" @click="gotoPage(`/about`)">Products</button>
       </div>
     </div>
 
@@ -21,8 +21,15 @@
   </div>
 </template>
 
-<script>
-export default {};
+<script lang="ts">
+import {Vue, Component} from "nuxt-property-decorator";
+
+@Component({})
+export default class Heropage extends Vue {
+  gotoPage(path: string) {
+    this.$nuxt.$router.push(path)
+  }
+};
 </script>
 
 <style lang="scss">
