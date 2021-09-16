@@ -19,7 +19,7 @@
       <form action="" class="form">
         <p class="paragraph-large heading">Contact</p>
         <input type="email" placeholder="email@email.com" />
-        <textarea name="" id="" rows="3">enter text...</textarea>
+        <textarea name="" id="" rows="3" placeholder="enter text here..."></textarea>
       </form>
     </div>
 
