@@ -39,7 +39,6 @@ export default class AuthenticatedLayout extends Vue {
         box-shadow: $shadow-soft;
         border-radius: 10px;
         overflow: hidden;
-        overflow-y: auto;
     }
 }
 </style>

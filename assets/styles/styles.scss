@@ -73,3 +73,44 @@ body {
 #auth-page {
   padding: var(--body-padding-x);
 }
+
+#authenticated-page {
+  --padding-x: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  header {
+    height: 50px;
+    padding: 0 var(--padding-x);
+    background: $secondary-color;
+    color: white;
+  }
+
+  .content {
+    padding: var(--padding-x);
+    flex: 1;
+    overflow: hidden;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: $background-color;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: rgb(5 108 242 / 50%);
+      border-radius: 4px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgb(5 108 242 / 80%);
+    }
+  }
+}

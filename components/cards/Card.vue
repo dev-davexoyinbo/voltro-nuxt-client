@@ -15,7 +15,7 @@
       <span>XXXX XXXX XXXX X321</span>
     </div>
 
-    <div class="validity d-flex align-items-center justify-content-center mt-5 mb--10">
+    <div class="validity d-flex gap-2 align-items-center justify-content-center mt-5 mb--10">
       <p class="text">VALID<br />THRU</p>
       <div class="date">05/24</div>
     </div>

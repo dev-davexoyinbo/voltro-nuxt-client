@@ -1,17 +1,12 @@
 <template>
   <div id="authenticated-page">
     <header class="d-flex align-items-center shadow-hard">
-      <span>ALL CARDS</span>
+      <span>ADD CARDS</span>
     </header>
 
     <div class="content">
-      <div class="card-container d-flex gap-8 flex-wrap-wrap">
-        <div class="card-wrapper" v-for="i in 3" :key="i">
-          <card />
-        </div>
-      </div>
+      Add Card
     </div>
-    <add-card-fab />
   </div>
 </template>
 
@@ -26,4 +21,3 @@ import Card from "~/components/cards/Card.vue";
 })
 export default class HomePage extends Vue {}
 </script>
-
