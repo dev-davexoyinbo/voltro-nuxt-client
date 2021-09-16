@@ -23,7 +23,7 @@
           ><i class="fas fa-credit-card mr-3"></i>Add Card</a
         >
         <div class="hr"></div>
-        <a href="/home" class="nav-item logout"
+        <a href="#" class="nav-item logout" @click.prevent="$auth.logout()"
           ><i class="fas fa-sign-out-alt mr3"></i>Logout</a
         >
       </nav>
