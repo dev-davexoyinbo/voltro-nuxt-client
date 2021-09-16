@@ -5,30 +5,62 @@
     </header>
 
     <div class="content">
-      <form action="" class="auth-form">
-      <header class="mb-6">
-        <legend>Add Card</legend>
-        <p class="paragraph-small">Secure your card with voltro secure.</p>
-      </header>
-      <div class="hr mb-10"></div>
-      <div class="form-group mb-8">
+      <form @submit.prevent="submit" action="" class="auth-form" ref="form">
+        <header class="mb-6">
+          <legend>Add Card</legend>
+          <p class="paragraph-small">Secure your card with voltro secure.</p>
+        </header>
+        <div class="hr mb-10"></div>
+        <div class="form-group mb-8">
           <label for="">Name</label>
-          <input type="text" class="form-control" placeholder="jane.doe@email.com">
-      </div>
-      <div class="form-group mb-8">
-          <label for="">Card Number</label>
-          <input type="number" min="1000000000000000" class="form-control" placeholder="0000000000000000">
-      </div>
-      <div class="form-group mb-12">
+          <input
+            name="name"
+            required
+            type="text"
+            class="form-control"
+            placeholder="jane.doe@email.com"
+          />
+        </div>
+        <div class="form-group mb-8">
+          <label for="">Card Number (16 digits)</label>
+          <input
+            name="card_number"
+            required
+            type="number"
+            min="1000000000000000"
+            max="9999999999999999"
+            class="form-control"
+            placeholder="0000000000000000"
+          />
+        </div>
+        <div class="form-group mb-12">
           <label for="">Expiration Date (MM/YY)</label>
           <div class="d-flex gap-2">
-            <input type="number" min="1" max="99" class="form-control exp-date" placeholder="00">
-            <input type="number"  min="1" max="99" class="form-control exp-date" placeholder="00">
+            <input
+              name="expiration_month"
+              required
+              type="number"
+              min="1"
+              max="99"
+              class="form-control exp-date"
+              placeholder="00"
+            />
+            <input
+              name="expiration_year"
+              required
+              type="number"
+              min="1"
+              max="99"
+              class="form-control exp-date"
+              placeholder="00"
+            />
           </div>
-      </div>
-      <button type="submit" class="">SUBMIT CARD</button>
-
-    </form>
+        </div>
+        <div class="text-error mb-10" v-if="errorMessage">
+          <small>{{ errorMessage }}</small>
+        </div>
+        <button type="submit" class="" :disabled="loading">SUBMIT CARD</button>
+      </form>
     </div>
   </div>
 </template>
@@ -43,7 +75,37 @@ import Card from "~/components/cards/Card.vue";
   layout: "authenticated",
   middleware: ["auth"],
 })
-export default class AddCardPage extends Vue {}
+export default class AddCardPage extends Vue {
+  loading: boolean = false;
+  errorMessage: string = "";
+
+  submit() {
+    event?.preventDefault();
+
+    if (this.loading) return;
+    this.loading = true;
+    this.errorMessage = "";
+
+    const form = this.$refs.form as HTMLFormElement;
+    const formData = new FormData(form);
+
+    this.$axios
+      .$post("/cards", formData)
+      .then((response) => {
+        this.$nuxt.$router.push("/home");
+      })
+      .catch((e) => {
+        if (e && e.response && e.response.data && e.response.data.message) {
+          this.errorMessage = e.response.data.message;
+        } else {
+          this.errorMessage = "An error occured";
+        }
+      })
+      .finally(() => {
+        this.loading = false;
+      });
+  } //end method submit
+}
 </script>
 
 <style scoped lang="scss">

@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :class="{viewing: viewing}">
+  <div class="card" :class="{ viewing: viewing }">
     <div class="mb-3 brand d-flex align-items-center gap-5 justify-content-end">
       <span class="brand-text paragraph-large">voltro secure</span>
       <div class="img-wrapper">
@@ -12,7 +12,12 @@
       </div>
     </div>
     <div class="card-number">
-      <span>XXXX XXXX XXXX X321</span>
+      <span v-show="!showAll"
+        >XXXX XXXX XXXX X{{
+          card.card_number.substr(card.card_number.length - 3)
+        }}</span
+      >
+      <span v-show="showAll">{{ cardNumberFull }}</span>
     </div>
 
     <div
@@ -27,40 +32,86 @@
       "
     >
       <p class="text">VALID<br />THRU</p>
-      <div class="date">05/24</div>
+      <div class="date">
+        {{ card.expiration_month }}/{{ card.expiration_year }}
+      </div>
     </div>
 
     <div class="name d-flex align-items-end gap-3 justify-content-between">
-      <span>oyinbo david</span>
+      <span>{{ card.name }}</span>
       <div class="img-wrapper issuer">
         <img src="/images/mastercard.svg" alt="" />
       </div>
     </div>
 
-    <button class="view-button primary-light" @click="viewing = true">View <i class="fas fa-eye"></i></button>
+    <button class="view-button primary-light" @click="viewing = true">
+      View <i class="fas fa-eye"></i>
+    </button>
     <div class="actions">
       <div>
-        <button class="secondary" @click="viewing = false">Close <i class="fas fa-times"></i></button>
+        <button class="secondary" @click="viewing = false">
+          Close <i class="fas fa-times"></i>
+        </button>
       </div>
       <div class="d-flex justify-content-end flex-wrap-wrap gap-2">
-        <button>Show all details</button>
-        <button class="accent" @click="gotoPage(`/edit-card/card_id`)">Edit</button>
-        <button class="danger">Delete</button>
+        <button v-if="!showAll" @click="toggleShowAll">Show all details</button>
+        <button v-else @click="toggleShowAll">Hide details</button>
+        <button class="accent" @click="gotoPage(`/edit-card/${card.id}`)">
+          Edit
+        </button>
+        <button class="danger" v-show="!deleting" @click="deleteCard()">
+          Delete
+        </button>
+        <button class="danger" v-show="deleting">Deleting...</button>
       </div>
-      
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "nuxt-property-decorator";
+import { Vue, Component, Prop } from "nuxt-property-decorator";
 
 @Component({})
 export default class Card extends Vue {
-  viewing: boolean = false
+  viewing: boolean = false;
+  showAll: boolean = false;
+  deleting: boolean = false;
 
-  gotoPage(path: string){
-    this.$nuxt.$router.push(path)
+  @Prop({ required: true }) readonly card!: any;
+
+  get cardNumberFull(): string {
+    let n = this.card.card_number;
+    return `${n.substr(0, 4)} ${n.substr(4, 4)} ${n.substr(8, 4)} ${n.substr(
+      12,
+      4
+    )}`;
+  }
+
+  gotoPage(path: string) {
+    this.$nuxt.$router.push(path);
+  }
+
+  toggleShowAll() {
+    event?.preventDefault;
+    this.showAll = !this.showAll;
+    this.viewing = false;
+  }
+
+  deleteCard() {
+    if (this.deleting) return;
+    this.deleting = true;
+
+    this.$axios
+      .delete(`/cards/${this.card.id}`)
+      .then((response) => {
+        this.$emit("deleted", this.card.id);
+      })
+      .catch((e) => {
+        console.log(e);
+      })
+      .finally(() => {
+        this.deleting = false;
+      });
   }
 }
 </script>
@@ -104,7 +155,6 @@ export default class Card extends Vue {
     position: absolute;
     left: 1rem;
     top: 1rem;
-
   }
   .actions {
     background: linear-gradient(
@@ -126,33 +176,30 @@ export default class Card extends Vue {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease-in-out;
-
   }
-    button {
-      height: 30px;
-      padding: 0 1rem;
-      border: none;
-      background: $primary-color;
-      color: white;
-      border-radius: 5px;
-      box-shadow: $shadow-soft;
-      cursor: pointer;
-      &.accent {
-        background:$accent-color;
-      }
-      &.secondary {
-        background: $secondary-color;
-      }
-      &.danger {
-        background: $error-color;
-      }
-      &.primary-light {
-        background: rgba(55, 98, 155, 0.899635);
-        opacity: 0.8;
-      }
+  button {
+    height: 30px;
+    padding: 0 1rem;
+    border: none;
+    background: $primary-color;
+    color: white;
+    border-radius: 5px;
+    box-shadow: $shadow-soft;
+    cursor: pointer;
+    &.accent {
+      background: $accent-color;
     }
-
-  
+    &.secondary {
+      background: $secondary-color;
+    }
+    &.danger {
+      background: $error-color;
+    }
+    &.primary-light {
+      background: rgba(55, 98, 155, 0.899635);
+      opacity: 0.8;
+    }
+  }
 
   .brand {
     .img-wrapper {
