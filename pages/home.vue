@@ -12,7 +12,7 @@
       </div>
       <div class="empty-card d-flex align-items-center justify-content-center">
         <div class="d-flex align-items-center flex-column">
-          <div class="img-wrapper empty mb-4">
+          <div class="img-wrapper empty mb-5">
             <img src="/images/empty.svg" alt="" />
           </div>
           <h4 class="heading-5 text-center mb-3">No Card Added</h4>
