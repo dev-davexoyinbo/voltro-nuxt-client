@@ -91,9 +91,12 @@ body {
 
   .content {
     padding: var(--padding-x);
+    padding-bottom: 5rem;
     flex: 1;
     overflow: hidden;
     overflow-y: auto;
+
+    
 
     &::-webkit-scrollbar {
       width: 5px;
