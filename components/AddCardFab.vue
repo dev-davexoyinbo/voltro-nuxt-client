@@ -14,12 +14,12 @@ export default {};
 @import "~assets/styles/shadows";
 
 .add-card-fab {
-  @include heading-6;
+  @include paragraph-large;
   background: $primary-color-2;
   border: none;
   color: white;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -29,7 +29,7 @@ export default {};
 
   position: fixed;
   right: 3rem;
-  bottom: 3rem;
+  bottom: 2.5rem;
   box-shadow: $shadow-soft;
 }
 </style>
