@@ -1,6 +1,6 @@
 <template>
   <nav id="navbar" class="shadow-hard">
-    <div class="brand">
+    <div class="brand" @click="gotoPage(`/`)">
       <div class="logo-wrapper">
         <img src="/logo.svg" alt="" />
       </div>
@@ -17,7 +17,7 @@
       <a href="#" class="nav-item">Pricing</a>
       <a href="#app-footer" class="nav-item">Contact</a>
       <a href="/about" class="nav-item" @click="gotoPage(`/about`)">About</a>
-      <a href="#" class="nav-button rounded shadow-soft">Sign up</a>
+      <a href="/auth/register" @click="gotoPage(`/auth/register`)" class="nav-button rounded shadow-soft">Sign up</a>
     </div>
   </nav>
 </template>
@@ -70,6 +70,7 @@ export default class Navbar extends Vue {
     display: flex;
     align-items: center;
     gap: 1rem;
+    cursor: pointer;
     .logo-wrapper {
       height: 41px;
       width: 41px;

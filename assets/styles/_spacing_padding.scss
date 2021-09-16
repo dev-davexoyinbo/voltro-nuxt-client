@@ -1,0 +1,18 @@
+$baseMarginPadding: 2px;
+
+$marginPaddingTypes: ("top": "t", "bottom": "b", "left" : "l", "right": "r");
+
+@for $i from 1 through 50 {
+    @each $t, $a in ("margin": "m" , "padding" : "p") {
+
+        .#{$a}-#{$i} {
+            #{$t}: calc(#{$baseMarginPadding} * #{$i});
+        }
+    
+        @each $key, $value in $marginPaddingTypes {
+            .#{$a}#{$value}-#{$i} {
+                #{$t}-#{$key}: calc(#{$baseMarginPadding} * #{$i});
+            }
+        }
+    }
+}
