@@ -1,18 +1,32 @@
 <template>
-  <div>This is the home page</div>
+  <div id="authenticated-page">
+    <header class="d-flex align-items-center">
+      <span>ALL CARDS</span>
+    </header>
+    <add-card-fab />
+  </div>
 </template>
 
 <script lang="ts">
-import {Vue, Component} from "nuxt-property-decorator";
+import { Vue, Component } from "nuxt-property-decorator";
+import AddCardFab from "~/components/AddCardFab.vue";
 
 @Component({
-    layout: "authenticated"
+  components: { AddCardFab },
+  layout: "authenticated",
 })
-export default class HomePage extends Vue {
-
-}
+export default class HomePage extends Vue {}
 </script>
 
-<style>
-
+<style lang="scss">
+@import "~assets/styles/variables";
+#authenticated-page {
+  --padding-x: 1rem;
+  header {
+    height: 50px;
+    padding: 0 var(--padding-x);
+    background: $secondary-color;
+    color: white;
+  }
+}
 </style>

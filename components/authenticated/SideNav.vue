@@ -9,7 +9,7 @@
         >
         <a href="/home" class="nav-item"><i class="fas fa-credit-card mr-3"></i>Add Card</a>
         <div class="hr"></div>
-        <a href="/home" class="nav-item logout"><i class="fas fa-home mr-3"></i>Logout</a>
+        <a href="/home" class="nav-item logout"><i class="fas fa-sign-out-alt mr3"></i>Logout</a>
       </nav>
     </div>
   </nav>
@@ -46,8 +46,16 @@ export default {};
   .nav-item {
       color: $text-color-2;
 
+      &.active {
+        color: $primary-color;
+      }
       &.logout {
           color: $secondary-color;
+      }
+      &:hover {
+        // color: color.scale($primary-color, $blackness: 15%);
+        color: darken($primary-color, 10%);
+        color: $primary-color-2;
       }
   }
 }
