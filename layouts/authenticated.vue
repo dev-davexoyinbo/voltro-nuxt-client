@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "nuxt-property-decorator";
+import { Vue, Component, Watch } from "nuxt-property-decorator";
 import SideNav from "~/components/authenticated/SideNav.vue";
 
 @Component({
@@ -28,6 +28,11 @@ import SideNav from "~/components/authenticated/SideNav.vue";
 })
 export default class AuthenticatedLayout extends Vue {
   sideBarOn: boolean = false;
+
+  @Watch("$route")
+  routeChange() {
+    this.sideBarOn = false
+  }
 }
 </script>
 
