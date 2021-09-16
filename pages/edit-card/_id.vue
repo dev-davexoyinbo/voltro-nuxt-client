@@ -51,6 +51,7 @@ export default class EditCardPage extends Vue {
   loading: boolean = false;
   errorMessage: string = "";
 
+  //@ts-ignore
   async asyncData({$axios, params}) {
     let card: any = {};
 

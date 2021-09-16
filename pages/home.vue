@@ -42,8 +42,8 @@ import Card from "~/components/cards/Card.vue";
 export default class HomePage extends Vue {
   cards: Array<any> = [];
 
+  //@ts-ignore
   async asyncData({ $axios }) {
-    console.log("==========================AsyncData==========================")
     let cards: Array<any> = [];
 
      await $axios.$get("/cards").then((response: any) => {
