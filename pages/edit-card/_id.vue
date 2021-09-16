@@ -1,13 +1,13 @@
 <template>
   <div id="authenticated-page">
     <header class="d-flex align-items-center shadow-hard">
-      <span>ADD CARDS</span>
+      <span>Edit CARDS</span>
     </header>
 
     <div class="content">
       <form action="" class="auth-form">
       <header class="mb-6">
-        <legend>Add Card</legend>
+        <legend>Edit Card</legend>
         <p class="paragraph-small">Secure your card with voltro secure.</p>
       </header>
       <div class="hr mb-10"></div>
@@ -42,7 +42,7 @@ import Card from "~/components/cards/Card.vue";
   components: { AddCardFab, Card },
   layout: "authenticated",
 })
-export default class AddCardPage extends Vue {}
+export default class EditCardPage extends Vue {}
 </script>
 
 <style scoped lang="scss">

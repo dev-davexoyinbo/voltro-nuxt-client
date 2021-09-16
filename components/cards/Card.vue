@@ -44,7 +44,7 @@
       </div>
       <div class="d-flex justify-content-end flex-wrap-wrap gap-2">
         <button>Show all details</button>
-        <button class="accent">Edit</button>
+        <button class="accent" @click="gotoPage(`/edit-card/card_id`)">Edit</button>
         <button class="danger">Delete</button>
       </div>
       
@@ -58,6 +58,10 @@ import { Vue, Component } from "nuxt-property-decorator";
 @Component({})
 export default class Card extends Vue {
   viewing: boolean = false
+
+  gotoPage(path: string){
+    this.$nuxt.$router.push(path)
+  }
 }
 </script>
 
