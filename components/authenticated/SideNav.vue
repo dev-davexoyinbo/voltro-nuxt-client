@@ -1,6 +1,6 @@
 <template>
   <nav id="sidenav">
-    <header class="p-8">Oyinbo David Bayode Lorem ipsum dolor sit amet.</header>
+    <header class="p-8">{{`${$auth.user.first_name} ${$auth.user.last_name}`}}</header>
     <div class="content p-8">
       <h6 class="paragraph-regular text-bf">Navigation</h6>
       <nav class="paragraph-regular d-flex flex-column mt-10 gap-4">
