@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card" :class="{viewing: viewing}">
     <div class="mb-3 brand d-flex align-items-center gap-5 justify-content-end">
       <span class="brand-text paragraph-large">voltro secure</span>
       <div class="img-wrapper">
@@ -15,7 +15,17 @@
       <span>XXXX XXXX XXXX X321</span>
     </div>
 
-    <div class="validity d-flex gap-2 align-items-center justify-content-center mt-5 mb--10">
+    <div
+      class="
+        validity
+        d-flex
+        gap-2
+        align-items-center
+        justify-content-center
+        mt-5
+        mb--10
+      "
+    >
       <p class="text">VALID<br />THRU</p>
       <div class="date">05/24</div>
     </div>
@@ -26,6 +36,19 @@
         <img src="/images/mastercard.svg" alt="" />
       </div>
     </div>
+
+    <button class="view-button primary-light" @click="viewing = true">View <i class="fas fa-eye"></i></button>
+    <div class="actions">
+      <div>
+        <button class="secondary" @click="viewing = false">Close <i class="fas fa-times"></i></button>
+      </div>
+      <div class="d-flex justify-content-end flex-wrap-wrap gap-2">
+        <button>Show all details</button>
+        <button class="accent">Edit</button>
+        <button class="danger">Delete</button>
+      </div>
+      
+    </div>
   </div>
 </template>
 
@@ -33,12 +56,15 @@
 import { Vue, Component } from "nuxt-property-decorator";
 
 @Component({})
-export default class Card extends Vue {}
+export default class Card extends Vue {
+  viewing: boolean = false
+}
 </script>
 
 <style lang="scss">
 @import "~/assets/styles/topography";
 @import "~/assets/styles/variables";
+@import "~/assets/styles/shadows";
 .card {
   position: relative;
   width: 400px;
@@ -58,7 +84,71 @@ export default class Card extends Vue {}
   );
   box-shadow: 0px 4px 11px rgba(13, 13, 13, 0.25);
   border-radius: 10px;
+  overflow: hidden;
   padding: 1rem 2rem;
+  &.viewing {
+    .actions {
+      opacity: 1;
+      pointer-events: initial;
+    }
+
+    .view-button {
+      display: none;
+    }
+  }
+  .view-button {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+
+  }
+  .actions {
+    background: linear-gradient(
+      180deg,
+      rgba(3, 12, 24, 0.74) 0%,
+      rgba(3, 12, 24, 0.662917) 20.31%,
+      rgba(3, 12, 24, 0) 100%
+    );
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    // display: flex;
+    // justify-content: flex-end;
+    padding: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+
+  }
+    button {
+      height: 30px;
+      padding: 0 1rem;
+      border: none;
+      background: $primary-color;
+      color: white;
+      border-radius: 5px;
+      box-shadow: $shadow-soft;
+      cursor: pointer;
+      &.accent {
+        background:$accent-color;
+      }
+      &.secondary {
+        background: $secondary-color;
+      }
+      &.danger {
+        background: $error-color;
+      }
+      &.primary-light {
+        background: rgba(55, 98, 155, 0.899635);
+        opacity: 0.8;
+      }
+    }
+
+  
 
   .brand {
     .img-wrapper {

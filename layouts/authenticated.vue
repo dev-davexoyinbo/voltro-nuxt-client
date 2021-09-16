@@ -24,7 +24,11 @@ export default class AuthenticatedLayout extends Vue {}
 @import "~assets/styles/shadows";
 
 #authenticated-layout {
-  padding: 12px 24px;
+  padding: 12px 8px;
+  @media only screen and (min-width: 768px) {
+    padding: 12px 24px;
+
+  }
   display: flex;
   gap: 1.5rem;
   min-height: 100vh;
