@@ -53,8 +53,10 @@ export default class AuthenticatedLayout extends Vue {}
       background: rgb(0 0 0 / 70%);
       z-index: -1;
     }
+    display: none;
     @media only screen and (min-width: 768px) {
       position: initial;
+      display: block;
 
       .backdrop {
         display: none;
