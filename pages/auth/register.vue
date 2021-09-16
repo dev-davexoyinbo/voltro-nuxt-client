@@ -49,7 +49,5 @@ export default class RegisterPage extends Vue {}
 
 <style lang="scss">
 @import "~assets/styles/forms/authentication_forms";
-#auth-page {
-  padding: var(--body-padding-x);
-}
+
 </style>
