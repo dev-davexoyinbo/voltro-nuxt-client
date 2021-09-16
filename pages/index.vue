@@ -93,7 +93,7 @@ import TrustedByStrip from "~/components/TrustedByStrip.vue";
     TrustedByStrip,
   },
 })
-export default class HomePage extends Vue {}
+export default class LandingPage extends Vue {}
 </script>
 
 <style lang="scss">

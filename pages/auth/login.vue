@@ -1,6 +1,6 @@
 <template>
   <div id="auth-page">
-    <form action="" class="auth-form">
+    <form action="" class="auth-form" @submit.prevent="submit">
       <header class="mb-6">
         <legend>Welcome to voltro secure</legend>
         <p class="paragraph-small">Welcome back, please log into your account.</p>
@@ -31,7 +31,13 @@ import { Vue, Component } from "nuxt-property-decorator";
 @Component({
   layout: "default",
 })
-export default class LoginPage extends Vue {}
+export default class LoginPage extends Vue {
+  submit() {
+    event?.preventDefault()
+
+    this.$nuxt.$router.push("/home")
+  }
+}
 </script>
 
 <style lang="scss">
